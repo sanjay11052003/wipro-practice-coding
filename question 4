@@ -1,0 +1,23 @@
+Check Number Parity
+Write a program in java to check whether the given number is an even number or not using if else statement.
+
+answer:
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        
+        Scanner scanner= new Scanner(System.in);
+        int num1= scanner.nextInt();
+        if(num1%2 == 0){
+            System.out.println("No is Even");
+        }
+        else{
+            System.out.println("No is odd");
+        }
+
+        scanner.close();
+
+        //write your answer here
+    }
+}
