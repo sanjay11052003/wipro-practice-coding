@@ -1,0 +1,164 @@
+
+Question 1
+
+Classes & Objects in Java
+
+
+Instructions:
+
+Write a program that takes input from the user and creates an object of a class named 'Person'. The 'Person' class should have two member variables: 'name' and 'age'. The program should prompt the user to enter their name and age, create a 'Person' object with the entered values, and then display the name and age of the person.
+
+import java.util.Scanner;
+
+public class person{
+    String name;
+    int age;
+    public static void main(String[] args)
+    {
+        Scanner sc= new Scanner(System.in);
+        String name= sc.next();
+        int age = sc.nextInt();
+        person pr = new person();
+        pr.name=name;
+        pr.age=age;
+        System.out.println("Name: "+pr.name);
+        System.out.println("Age: "+pr.age);
+        sc.close();
+    }
+}
+
+Question 2
+
+Sum of All Numbers
+Find the sum of the digits using recursion
+
+import java.util.Scanner;
+
+public class SumOfDigits {
+    // Recursive function to find sum of digits
+    public static int sumOfDigits(int n) {
+        if (n == 0)
+            return 0;
+        return (n % 10) + sumOfDigits(n / 10);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sum = sumOfDigits(num);
+        System.out.println(sum);
+        sc.close();
+    }
+}
+
+Question 3
+
+Book Class
+Create a Java class named Book to represent a book. The class should have the following features:
+
+Instance Variables:
+
+title (String): to store the title of the book.
+
+author (String): to store the name of the author.
+
+year (int): to store the publication year of the book.
+
+
+
+Constructors:
+
+A default constructor that initializes the title, author, and year to default values ("Not specified", "Unknown", and 0, respectively).
+
+A parameterized constructor that takes values for title, author, and year and initializes the corresponding instance variables.
+
+
+
+Methods: A method named displayInfo that prints the details of the book (title, author, and year).
+
+
+
+Application: In the main method, create two instances of the Book class using both the default constructor and the parameterized constructor.
+
+Call the displayInfo method on each instance to display the details of the books. Your goal is to implement the Book class with appropriate constructors and methods as described.
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Book book1 = new Book("Not specified", "Unknown", 0);
+        Book book2 = new Book("Java Programming", "Sakshi", 2024);
+        
+        System.out.println("Book 1:");
+        book1.displayInfo();
+
+        System.out.println("Book 2:");
+        book2.displayInfo();
+    }
+
+    //  define Book class with displayInfo() inside it
+    public static class Book {
+        String title;
+        String author;
+        int year;
+
+        Book(String title, String author, int year) {
+            this.title = title;
+            this.author = author;
+            this.year = year;
+        }
+
+        void displayInfo() {
+            System.out.println("Title: " + title);
+            System.out.println("Author: " + author);
+            System.out.println("Year: " + year);
+            System.out.println();
+        }
+    }
+}
+
+
+Question 4
+
+constructor overloading
+Create one default constructor to initialize the fields as default values to calculate volume of the cube and one parameterized constructor to pass parameters and initialize them accordingly. You can pass 3 integer parameters at runtime 
+(While using parameterized constructor, the program, should also display the output with the default constructor also)
+
+
+import java.util.Scanner;
+
+public class Constructor {
+    int length, breadth, height;
+    double volume;
+
+    Constructor() {
+        System.out.println("Constructor without parameter");
+        length = 10;
+        breadth = 10;
+        height = 10;
+        volume = length * breadth * height;
+        System.out.println("Volume is " + volume);
+    }
+
+    Constructor(int l, int b, int h) {
+        this();
+        System.out.println("Constructor with parameter");
+        length = l;
+        breadth = b;
+        height = h;
+        volume = length * breadth * height;
+        System.out.println("Volume is " + volume);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int l = s.nextInt();
+        int b = s.nextInt();
+        int h = s.nextInt();
+
+        Constructor cuboid = new Constructor(l, b, h);
+
+        s.close();
+    }
+}
