@@ -1,0 +1,126 @@
+
+
+sum of the elements present inside the array
+1. Write a program to find the sum of the elements present inside the array.
+
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+        int size = input.nextInt();  
+        int[] arr = new int[size];
+         // read the array elements
+        for (int i = 0; i < size; i++) {
+            arr[i] = input.nextInt();
+        }
+        
+        sumArray(arr,size);
+        
+    }
+    
+    public static void sumArray(int[] arr,int size)
+    {
+      //write logic here and display sum
+      int sum=0;
+      for(int i=0 ; i<size; i++)
+      {
+          sum =sum+ arr[i];
+      }
+      System.out.println("the sum of the elements in the array = "+sum);
+     
+    }
+}
+
+
+Question 2
+
+Write a program that takes the row & columns input from the user to populate a 2D array and then prints the array.
+
+import java.util.Scanner;
+
+public class MultidimensionalArrayExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // TODO: Write your code here
+        int row= scanner.nextInt();
+        int columns = scanner.nextInt();
+        int [][] arr = new int[row][columns];
+        for(int i =0;i <row;i++)
+        {
+            for(int j=0; j<columns;j++)
+            {
+                arr[i][j]= scanner.nextInt(); 
+            }
+        }
+        for(int i =0;i <row;i++)
+        {
+            for(int j=0; j<columns;j++)
+            {
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println("");
+        }
+        scanner.close();
+    }
+}
+
+
+Question 3
+
+Reverse each word in a string
+Write a function to reverse each word in a string.
+
+
+
+import java.util.*;
+
+public class ReverseEachWord {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = "Great Learning";
+
+        String[] words = input.split(" "); // Split the string into words
+        StringBuilder result = new StringBuilder();
+
+        for (String word : words) {
+            StringBuilder rev = new StringBuilder(word);
+            rev.reverse(); // Reverse each word
+            result.append(rev).append(" "); // Add to result
+        }
+
+        // Trim the extra space and print
+        System.out.println(result.toString().trim());
+    }
+}
+
+Question 4
+
+Equal character in string
+You are given a string s. In one move you can change any character to another character.
+
+You have to make a string which consists of the same character. Find the minimum move to do this task.
+
+import java.util.*;
+
+public class MinMovesToSameChar {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+
+        int[] freq = new int[26];  // For 'a' to 'z'
+
+        for (char c : s.toCharArray()) {
+            freq[c - 'a']++;
+        }
+
+        int maxFreq = 0;
+        for (int f : freq) {
+            if (f > maxFreq)
+                maxFreq = f;
+        }
+
+        int minMoves = s.length() - maxFreq;
+        System.out.println(minMoves);
+    }
+}
