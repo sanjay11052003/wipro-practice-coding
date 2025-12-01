@@ -1,1 +1,80 @@
+1.) Write a program that takes two numbers as input from the user and performs arithmetic operations on them using the arithmetic operators (sum, difference, product, quotient, remainder) in Java.
+answer : 
+import java.util.Scanner;
 
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // TODO: Write your code here
+        int num1= scanner.nextInt();
+        int num2 = scanner.nextInt();
+        System.out.println("Sum: "+ (num1+num2));
+        System.out.println("Difference: "+ (num1-num2));
+        System.out.println("Product: "+ (num1*num2));
+        System.out.println("Quotient: "+ (num1/num2));
+        System.out.println("Remainder: "+ (num1%num2));
+        scanner.close();
+    }
+}
+
+Write a program that takes two boolean values as input and performs logical operations (AND, OR) on them using the logical operators& print the result.
+answer:
+import java.util.Scanner;
+
+public class LogicalOperatorsExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean input1 = scanner.nextBoolean();
+        boolean input2 = scanner.nextBoolean();
+        System.out.println((input1 && input2));
+        System.out.println((input1 || input2));
+        scanner.close();
+        // TODO: Write your code here
+    }
+}
+
+Write a program that takes two integers as input and compares them using relational operators. Print 'true' if the first integer is greater than the second integer, and 'false' otherwise.
+
+answer:
+import java.util.Scanner;
+
+public class RelationalOperatorExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        // TODO: Write your code here
+        if(num1>num2)
+        {
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+        scanner.close();
+    }
+}
+
+Check Number Parity
+Write a program in java to check whether the given number is an even number or not using if else statement.
+
+answer:
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        
+        Scanner scanner= new Scanner(System.in);
+        int num1= scanner.nextInt();
+        if(num1%2 == 0){
+            System.out.println("No is Even");
+        }
+        else{
+            System.out.println("No is odd");
+        }
+
+        scanner.close();
+
+        //write your answer here
+    }
+}
